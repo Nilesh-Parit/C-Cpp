@@ -1,0 +1,33 @@
+#include<iostream>
+using namespace std;
+
+class A{
+	int c;
+	public : int a;
+	
+	protected : int b;
+		public :
+		 void display(){
+		 	cout<<"In display of A"<<endl;
+		 }
+};
+class B : private A{
+	public :
+		void show(){
+			cout<<b;
+		}
+};
+class C : private B{
+	public :
+		/*
+		
+		void show(){
+		cout<<a<<b; // error
+		*/
+};
+int main(){
+	B bobj;
+	bobj.show();
+	C c;
+//	c.show();
+}
